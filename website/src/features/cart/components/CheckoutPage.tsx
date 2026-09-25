@@ -21,7 +21,7 @@ type PaymentMethod = "card" | "cash";
 const fieldClassName =
   "w-full rounded-[4px] border border-[#ebe6de] bg-white px-4 text-[14px] leading-[normal] text-[#1a1a1a] outline-none focus:border-[#1a1a1a]";
 
-const WHATSAPP_ORDER_URL = "https://wa.me/DIGITERA-WHATSAPP-NUMBER";
+const WHATSAPP_ORDER_URL = "https://wa.me/201007974927";
 
 function buildOrderMessage(input: {
   recipientName: string;
