@@ -10,7 +10,7 @@ import { productPaths } from "@/features/products";
 const NAV_LINKS = [
   { href: "/", label: "Home" },
   { href: productPaths.list, label: "Shop" },
-  { href: productPaths.list, label: "Categories" },
+  { href: "/categories", label: "Categories" },
 ] as const;
 
 const searchFieldClassName =
@@ -64,6 +64,7 @@ function SearchForm({
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <header className="sticky top-0 z-40 bg-[#faf8f5]">
@@ -84,7 +85,11 @@ export function Header() {
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-[13px] leading-[normal] font-medium text-[#605a54] uppercase"
+                className={`text-[13px] leading-[normal] uppercase ${
+                  pathname === link.href
+                    ? "font-bold text-[#1a1a1a]"
+                    : "font-medium text-[#605a54]"
+                }`}
               >
                 {link.label}
               </Link>
@@ -136,7 +141,11 @@ export function Header() {
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-[13px] leading-[normal] font-medium text-[#605a54] uppercase"
+                className={`text-[13px] leading-[normal] uppercase ${
+                  pathname === link.href
+                    ? "font-bold text-[#1a1a1a]"
+                    : "font-medium text-[#605a54]"
+                }`}
                 onClick={() => setMenuOpen(false)}
               >
                 {link.label}

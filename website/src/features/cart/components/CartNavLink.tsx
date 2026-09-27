@@ -11,11 +11,11 @@ export function CartNavLink() {
   return (
     <Link
       href={cartPaths.cart}
-      className="flex items-center gap-1.5"
+      className="relative inline-flex"
       aria-label={`Cart, ${quantity} ${quantity === 1 ? "item" : "items"}`}
     >
       <img src="/icons/shopping-bag.svg" alt="" width={20} height={20} />
-      <span className="rounded-full bg-[#c5a880] px-1.5 py-0.5 text-[10px] leading-[normal] font-bold text-white">
+      <span className="absolute -top-1.5 -right-1.5 flex min-w-[16px] h-4 items-center justify-center rounded-full bg-[#c5a880] px-1 text-[9px] leading-none font-bold text-white">
         {quantity}
       </span>
     </Link>

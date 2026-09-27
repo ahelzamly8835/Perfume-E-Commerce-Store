@@ -1,6 +1,21 @@
-import { redirect } from "next/navigation";
-import { productPaths } from "@/features/products";
+import {
+  HeroSection,
+  TrendingSection,
+  ScentArchetypesSection,
+  OccasionsSection,
+  PromoSection,
+  NewsletterSection,
+} from "@/components/home";
 
 export default function HomeRoute() {
-  redirect(productPaths.list);
+  return (
+    <>
+      <HeroSection />
+      <TrendingSection />
+      <ScentArchetypesSection />
+      <OccasionsSection />
+      <PromoSection />
+      <NewsletterSection />
+    </>
+  );
 }
