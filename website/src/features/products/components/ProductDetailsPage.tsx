@@ -10,11 +10,13 @@ import {
   ProductOptions,
   type VolumeGroup,
 } from "@/features/products/components/ProductOptions";
+import { FavoriteButton } from "@/features/favorites/components/FavoriteButton";
 import { useProduct } from "@/features/products/hooks/useProduct";
 import { useProducts } from "@/features/products/hooks/useProducts";
 import { productPaths } from "@/features/products/paths";
 import type { Product } from "@/features/products/types/product.types";
 import { cn } from "@/lib/utils/cn";
+import { resolveProductImages } from "@/features/products/utils/product.utils";
 
 const VOLUME_PRESETS = [
   { id: "30 ml", label: "30 ml", ratio: 140 / 220 },
@@ -313,6 +315,17 @@ export function ProductDetailsPage({
                 unitPrice,
               })}
             </div>
+            <FavoriteButton
+              variant="inline"
+              product={{
+                id: product.id,
+                productId: product.id,
+                name: product.name,
+                subtitle: product.notes ?? "",
+                price: unitPrice,
+                image: resolveProductImages(product)[0] ?? "",
+              }}
+            />
           </div>
           <div className="h-px w-full bg-[#ebe6de]" />
           <div className="flex w-full flex-col items-start gap-5">

@@ -75,7 +75,7 @@ export function TrendingSection() {
             <div className="flex flex-col gap-3">
               {/* name + price */}
               <div className="flex items-start justify-between gap-2">
-                <div className="flex flex-col gap-1 min-w-">
+                <div className="flex flex-col gap-1 min-w-0">
                   <p className="font-[family-name:var(--font-instrument-serif)] text-[18px] text-[#1a1a1a] truncate lg:text-[22px]">
                     {product.name}
                   </p>

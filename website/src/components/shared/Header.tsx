@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useState, type FormEvent } from "react";
 import { CartNavLink } from "@/features/cart";
+import { FavoritesNavLink } from "@/features/favorites";
 import { productPaths } from "@/features/products";
 
 const NAV_LINKS = [
@@ -110,7 +111,7 @@ export function Header() {
           >
             ODORATUS
           </Link>
-          <div className="flex items-center justify-self-end gap-7">
+          <div className="flex items-center justify-self-end gap-6">
             <Suspense
               fallback={
                 <div className="hidden w-[200px] items-center gap-2 rounded-full border border-[#ebe6de] px-3 py-2 lg:flex">
@@ -126,6 +127,7 @@ export function Header() {
             >
               <SearchForm className="hidden w-[200px] items-center gap-2 rounded-full border border-[#ebe6de] px-3 py-2 lg:flex" />
             </Suspense>
+            <FavoritesNavLink />
             <CartNavLink />
           </div>
         </div>
