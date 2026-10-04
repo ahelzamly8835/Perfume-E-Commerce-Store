@@ -40,7 +40,7 @@ export function ProductCard({ product }: ProductCardProps) {
             </div>
           )}
         </Link>
-        {/* heart toggle — overlay على الصورة */}
+ 
         <FavoriteButton
           variant="overlay"
           product={{
@@ -72,7 +72,7 @@ export function ProductCard({ product }: ProductCardProps) {
         </div>
         <button
           type="button"
-          className="flex w-full cursor-pointer items-center justify-center rounded border border-solid border-[#ebe6de] py-3 text-[11px] font-semibold uppercase whitespace-nowrap text-[#1a1a1a]"
+          className="flex w-full cursor-pointer items-center justify-center rounded border border-solid border-[#ebe6de] py-3 text-[11px] font-semibold hover:bg-black hover:text-white duration-300 transition ease-in-out uppercase whitespace-nowrap text-[#1a1a1a]"
           onClick={() =>
             addItem({
               productId: product.id,

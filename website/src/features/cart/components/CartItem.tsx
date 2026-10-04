@@ -54,7 +54,7 @@ export function CartItem({
           <div className="flex items-center rounded border border-[#ebe6de] text-[12px] leading-[normal]">
             <button
               type="button"
-              className="inline-flex h-10 w-10 items-center justify-center font-normal text-[#605a54] disabled:cursor-default disabled:opacity-40"
+              className="inline-flex h-10 w-10 items-center cursor-pointer justify-center font-normal text-[#605a54] disabled:cursor-default disabled:opacity-40"
               aria-label={`Decrease quantity of ${line.name}`}
               disabled={line.quantity <= 1}
               onClick={() => onDecrement(line.id)}
@@ -66,7 +66,7 @@ export function CartItem({
             </span>
             <button
               type="button"
-              className="inline-flex h-10 w-10 items-center justify-center font-normal text-[#605a54]"
+              className="inline-flex h-10 w-10 items-center cursor-pointer justify-center font-normal text-[#605a54]"
               aria-label={`Increase quantity of ${line.name}`}
               onClick={() => onIncrement(line.id)}
             >

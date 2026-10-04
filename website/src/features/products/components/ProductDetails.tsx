@@ -10,7 +10,7 @@ type ProductDetailsProps = {
   price: number;
 };
 
-/** US-04: product information. */
+
 export function ProductDetails({ product, price }: ProductDetailsProps) {
   return (
     <div className="flex w-full flex-col items-start gap-3">

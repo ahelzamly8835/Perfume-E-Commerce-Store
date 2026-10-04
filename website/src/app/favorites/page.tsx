@@ -6,10 +6,7 @@ import { useFavorites } from "@/features/favorites/hooks/useFavorites";
 import { useCart } from "@/features/cart";
 import { productPaths } from "@/features/products";
 
-const imgHeartFilled =
-  "https://www.figma.com/api/mcp/asset/c2025d3d-c97f-4d13-9f8a-c4b308c5a195.svg";
-const imgArrowRight =
-  "https://www.figma.com/api/mcp/asset/b8cbd492-c898-4131-b6ed-0a7e368871fb.svg";
+// SVGs inline — no external URLs needed
 
 function timeAgo(savedAt: number): string {
   const diff = Date.now() - savedAt;
@@ -29,7 +26,6 @@ export default function FavoritesPage() {
 
   return (
     <>
-      {/* breadcrumbs */}
       <nav
         aria-label="Breadcrumb"
         className="flex items-center gap-2 px-6 py-5 text-[12px] lg:px-20 lg:py-6"
@@ -41,7 +37,6 @@ export default function FavoritesPage() {
         <span className="font-semibold text-[#1a1a1a]">Favorites</span>
       </nav>
 
-      {/* heading */}
       <div className="flex flex-col gap-3 px-6 pb-10 lg:px-20 lg:pb-[42px]">
         <div className="flex items-end justify-between flex-wrap gap-4">
           <h1 className="font-[family-name:var(--font-instrument-serif)] text-[42px] leading-tight text-[#1a1a1a] lg:text-[64px]">
@@ -49,7 +44,9 @@ export default function FavoritesPage() {
           </h1>
           {!isEmpty && (
             <div className="flex items-center gap-2 bg-[#f4f0eb] rounded-full px-3.5 py-2">
-              <img src={imgHeartFilled} alt="" width={14} height={14} />
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#c5a880" stroke="none" aria-hidden>
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+              </svg>
               <span className="text-[11px] font-bold text-[#1a1a1a] uppercase">
                 {count} saved {count === 1 ? "fragrance" : "fragrances"}
               </span>
@@ -62,34 +59,33 @@ export default function FavoritesPage() {
         </p>
       </div>
 
-      {/* saved products */}
+
       {!isEmpty && (
         <div className="flex flex-col gap-5 px-6 pb-20 lg:px-20 lg:pb-[100px]">
-          {/* collection summary bar */}
+
           <div className="flex items-center justify-between border-b border-[#ebe6de] pb-4 text-[11px] uppercase">
             <span className="font-normal text-[#605a54]">Your saved collection</span>
             <span className="font-normal text-[#c5a880]">Complimentary wrapping available</span>
           </div>
 
-          {/* product grid */}
           <div className="grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-6">
             {items.map((item) => (
               <article
                 key={item.productId}
                 className="flex flex-col gap-4 bg-white rounded-[8px] p-4 shadow-[0px_8px_24px_0px_rgba(26,26,26,0.04)]"
               >
-                {/* image */}
+
                 <div className="relative h-[200px] w-full overflow-hidden rounded-[4px] lg:h-[334px]">
                   <img
                     src={item.image}
                     alt={item.name}
                     className="absolute inset-0 object-cover size-full"
                   />
-                  {/* remove button */}
+
                   <button
                     type="button"
                     onClick={() => removeItem(item.productId)}
-                    className="absolute right-3.5 top-3.5 flex items-center gap-1.5 bg-[rgba(255,255,255,0.95)] border border-[#ebe6de] rounded-full px-3 py-2 text-[10px] font-bold text-[#1a1a1a] uppercase shadow-[0px_4px_12px_0px_rgba(26,26,26,0.08)] hover:bg-white transition-colors"
+                    className="absolute right-3.5 top-3.5 cursor-pointer flex items-center gap-1.5 bg-[rgba(255,255,255,0.95)] border border-[#ebe6de] rounded-full px-3 py-2 text-[10px] font-bold text-[#1a1a1a] uppercase shadow-[0px_4px_12px_0px_rgba(26,26,26,0.08)] hover:bg-white transition-colors"
                     aria-label={`Remove ${item.name} from favorites`}
                   >
                     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden>
@@ -140,7 +136,7 @@ export default function FavoritesPage() {
                         selectedOptions: {},
                       })
                     }
-                    className="flex w-full items-center justify-center bg-[#1a1a1a] rounded-[4px] py-3.5 text-[11px] font-bold text-white uppercase hover:bg-[#333] transition-colors"
+                    className="flex w-full cursor-pointer items-center justify-center bg-[#1a1a1a] rounded-sm py-3.5 text-[11px] font-bold text-white uppercase hover:bg-[#333] transition-colors"
                   >
                     Add to Cart +
                   </button>
@@ -180,7 +176,9 @@ export default function FavoritesPage() {
               className="inline-flex shrink-0 items-center gap-2.5 bg-[#1a1a1a] rounded-[4px] px-7 py-4 text-[11px] font-bold text-white uppercase hover:bg-[#333] transition-colors"
             >
               Explore fragrances
-              <img src={imgArrowRight} alt="" width={14} height={14} />
+              <svg width="14" height="14" viewBox="0 0 9 9" fill="none" aria-hidden>
+                <path d="M7.6656 7.6656V1H1M7.6656 1L1 7.6656" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+              </svg>
             </Link>
           </div>
         </div>

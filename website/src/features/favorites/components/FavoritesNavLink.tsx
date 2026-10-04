@@ -12,7 +12,6 @@ export function FavoritesNavLink() {
       className="relative inline-flex"
       aria-label={`Favorites, ${count} ${count === 1 ? "item" : "items"}`}
     >
-      {/* heart icon — inline SVG so we can style the fill */}
       <svg
         width="20"
         height="20"

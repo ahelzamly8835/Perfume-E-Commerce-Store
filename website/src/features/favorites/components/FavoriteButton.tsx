@@ -6,8 +6,6 @@ import { cn } from "@/lib/utils/cn";
 
 type FavoriteButtonProps = {
   product: Omit<FavoriteItem, "savedAt">;
-  /** "overlay" = positioned absolute فوق الصورة (ProductCard)
-   *  "inline"  = زر عادي في الـ layout (ProductDetailsPage) */
   variant?: "overlay" | "inline";
   className?: string;
 };
@@ -36,7 +34,7 @@ export function FavoriteButton({
       <button
         type="button"
         onClick={(e) => {
-          e.preventDefault(); // don't follow parent <Link>
+          e.preventDefault(); 
           toggle();
         }}
         aria-label={isFav ? `Remove ${product.name} from favorites` : `Save ${product.name} to favorites`}
@@ -54,7 +52,7 @@ export function FavoriteButton({
     );
   }
 
-  // inline variant — for product detail page
+
   return (
     <button
       type="button"
@@ -62,7 +60,7 @@ export function FavoriteButton({
       aria-label={isFav ? `Remove ${product.name} from favorites` : `Save ${product.name} to favorites`}
       aria-pressed={isFav}
       className={cn(
-        "flex h-12 w-12 shrink-0 items-center justify-center rounded border transition-all",
+        "flex h-12 w-12 shrink-0 items-center justify-center rounded border transition-all cursor-pointer",
         isFav
           ? "border-[#c5a880] bg-[#c5a880]/10 hover:bg-[#c5a880]/20"
           : "border-[#ebe6de] bg-white hover:border-[#c5a880]",
@@ -80,8 +78,8 @@ function HeartIcon({ filled, size = 16 }: { filled: boolean; size?: number }) {
       width={size}
       height={size}
       viewBox="0 0 24 24"
-      fill={filled ? "white" : "none"}
-      stroke={filled ? "white" : "#1a1a1a"}
+      fill={filled ? "#c5a880" : "none"}
+      stroke={filled ? "#c5a880" : "#1a1a1a"}
       strokeWidth="1.8"
       strokeLinecap="round"
       strokeLinejoin="round"

@@ -287,7 +287,7 @@ export function ProductDetailsPage({
               <button
                 type="button"
                 aria-label="Decrease quantity"
-                className="inline-flex h-12 w-11 items-center justify-center text-[16px] leading-none font-normal text-[#605a54] disabled:opacity-40"
+                className="inline-flex h-12 w-11 cursor-pointer items-center justify-center text-[16px] leading-none font-normal text-[#605a54] disabled:opacity-40"
                 disabled={quantity <= 1}
                 onClick={() =>
                   setQuantity((current) => Math.max(1, current - 1))
@@ -301,7 +301,7 @@ export function ProductDetailsPage({
               <button
                 type="button"
                 aria-label="Increase quantity"
-                className="inline-flex h-12 w-11 items-center justify-center text-[16px] leading-none font-normal text-[#605a54]"
+                className="inline-flex h-12 w-11 cursor-pointer items-center justify-center text-[16px] leading-none font-normal text-[#605a54]"
                 onClick={() => setQuantity((current) => current + 1)}
               >
                 +
