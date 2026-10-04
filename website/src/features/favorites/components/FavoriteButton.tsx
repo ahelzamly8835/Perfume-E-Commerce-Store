@@ -40,7 +40,7 @@ export function FavoriteButton({
         aria-label={isFav ? `Remove ${product.name} from favorites` : `Save ${product.name} to favorites`}
         aria-pressed={isFav}
         className={cn(
-          "absolute right-3 top-3 z-10 flex size-8 items-center justify-center rounded-full transition-all",
+          "absolute right-3 top-3 z-10 flex size-8 items-center justify-center rounded-full transition-all cursor-pointer",
           isFav
             ? "bg-[#c5a880] shadow-md"
             : "bg-[rgba(255,255,255,0.92)] shadow-[0px_4px_12px_0px_rgba(26,26,26,0.1)] hover:bg-white",
@@ -62,7 +62,7 @@ export function FavoriteButton({
       className={cn(
         "flex h-12 w-12 shrink-0 items-center justify-center rounded border transition-all cursor-pointer",
         isFav
-          ? "border-[#c5a880] bg-[#c5a880]/10 hover:bg-[#c5a880]/20"
+          ? "border-[#c5a880] bg-[#c5a880] hover:bg-[#c5a880]"
           : "border-[#ebe6de] bg-white hover:border-[#c5a880]",
         className,
       )}
@@ -78,8 +78,8 @@ function HeartIcon({ filled, size = 16 }: { filled: boolean; size?: number }) {
       width={size}
       height={size}
       viewBox="0 0 24 24"
-      fill={filled ? "#c5a880" : "none"}
-      stroke={filled ? "#c5a880" : "#1a1a1a"}
+      fill={filled ? "white" : "none"}
+      stroke={filled ? "white" : "#1a1a1a"}
       strokeWidth="1.8"
       strokeLinecap="round"
       strokeLinejoin="round"
